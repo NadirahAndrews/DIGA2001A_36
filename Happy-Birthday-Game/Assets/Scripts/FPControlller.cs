@@ -48,6 +48,7 @@ public class FPController : MonoBehaviour
         }
     }
 
+
     public void HandleMovement()
     {
         Vector3 move = transform.right * moveInput.x + transform.forward * moveInput.y;

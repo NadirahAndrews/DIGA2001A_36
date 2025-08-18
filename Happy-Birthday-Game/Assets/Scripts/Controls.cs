@@ -117,6 +117,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""OpenDoor"",
+                    ""type"": ""Button"",
+                    ""id"": ""802320bc-511d-4c9a-ac62-e7223a855a2c"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -328,6 +337,17 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""81a8d8cd-9fdd-4e3a-8961-6b7f2adc66e1"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard"",
+                    ""action"": ""OpenDoor"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -367,6 +387,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
+        m_Player_OpenDoor = m_Player.FindAction("OpenDoor", throwIfNotFound: true);
     }
 
     ~@Controls()
@@ -450,6 +471,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Movement;
     private readonly InputAction m_Player_Look;
     private readonly InputAction m_Player_Jump;
+    private readonly InputAction m_Player_OpenDoor;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -473,6 +495,10 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/Jump".
         /// </summary>
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/OpenDoor".
+        /// </summary>
+        public InputAction @OpenDoor => m_Wrapper.m_Player_OpenDoor;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -508,6 +534,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Jump.started += instance.OnJump;
             @Jump.performed += instance.OnJump;
             @Jump.canceled += instance.OnJump;
+            @OpenDoor.started += instance.OnOpenDoor;
+            @OpenDoor.performed += instance.OnOpenDoor;
+            @OpenDoor.canceled += instance.OnOpenDoor;
         }
 
         /// <summary>
@@ -528,6 +557,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Jump.started -= instance.OnJump;
             @Jump.performed -= instance.OnJump;
             @Jump.canceled -= instance.OnJump;
+            @OpenDoor.started -= instance.OnOpenDoor;
+            @OpenDoor.performed -= instance.OnOpenDoor;
+            @OpenDoor.canceled -= instance.OnOpenDoor;
         }
 
         /// <summary>
@@ -615,5 +647,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnJump(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "OpenDoor" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnOpenDoor(InputAction.CallbackContext context);
     }
 }

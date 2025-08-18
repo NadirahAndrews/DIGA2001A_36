@@ -31,6 +31,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "OpenDoor",
+                    "type": "Button",
+                    "id": "802320bc-511d-4c9a-ac62-e7223a855a2c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -240,6 +249,17 @@
                     "processors": "",
                     "groups": ";Gamepad",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "81a8d8cd-9fdd-4e3a-8961-6b7f2adc66e1",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard",
+                    "action": "OpenDoor",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
