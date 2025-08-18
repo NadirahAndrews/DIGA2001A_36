@@ -48,6 +48,23 @@ public class FPController : MonoBehaviour
         }
     }
 
+    public void OnOpenDoor(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Ray ray = new Ray(cameraTransform.position, cameraTransform.forward);
+
+            if (Physics.Raycast(ray, out RaycastHit hit, 3f))
+            {
+                Door door = hit.collider.GetComponent<Door>();
+
+                if (door != null)
+                    door.Swing(1f);
+            }
+        }
+    }
+
+
     public void HandleMovement()
     {
         Vector3 move = transform.right * moveInput.x + transform.forward * moveInput.y;
