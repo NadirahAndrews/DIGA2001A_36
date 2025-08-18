@@ -26460,6 +26460,7 @@ Transform:
   - {fileID: 2000784508}
   - {fileID: 25899333}
   - {fileID: 1368819983}
+  - {fileID: 1682400846}
   m_Father: {fileID: 1920778458}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1073467929
@@ -46095,7 +46096,7 @@ GameObject:
   - component: {fileID: 1682400840}
   - component: {fileID: 1682400839}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46113,7 +46114,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19149bea139ba554981331a590fd0566, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strength: 1
 --- !u!95 &1682400840
 Animator:
   serializedVersion: 7
@@ -46581,11 +46581,11 @@ Transform:
   m_GameObject: {fileID: 1682400838}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.22216286, z: -0, w: 0.97500956}
-  m_LocalPosition: {x: 58.54, y: -0.18, z: -21.74}
-  m_LocalScale: {x: 1.8777403, y: 2.5017853, z: 0.2656}
+  m_LocalPosition: {x: -0.19161467, y: 51.91539, z: -0.35739386}
+  m_LocalScale: {x: 0.10106821, y: 84.55209, z: 0.014295755}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1045574035}
   m_LocalEulerAnglesHint: {x: 0, y: 25.672, z: 0}
 --- !u!43 &1689258533
 Mesh:
@@ -58310,4 +58310,3 @@ SceneRoots:
   - {fileID: 832575519}
   - {fileID: 528727109}
   - {fileID: 1998527325}
-  - {fileID: 1682400846}

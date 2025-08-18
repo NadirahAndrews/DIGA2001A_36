@@ -50,7 +50,7 @@ public class FPController : MonoBehaviour
 
     public void OnOpenDoor(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (!context.performed)
         {
             Ray ray = new Ray(cameraTransform.position, cameraTransform.forward);
 
@@ -59,7 +59,7 @@ public class FPController : MonoBehaviour
                 Door door = hit.collider.GetComponent<Door>();
 
                 if (door != null)
-                    door.Swing(1f);
+                    door.Swing();
             }
         }
     }

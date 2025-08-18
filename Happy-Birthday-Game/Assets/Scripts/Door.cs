@@ -3,17 +3,15 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    public float strength = 1f;
-    public void Swing(float value)
+    private Animator animator;
+    private bool isOpen = false;
+    private void Awake()
     {
-        strength -= value;
-        if (strength <= 0)
-        {
-            Close();
-        }
+        animator = GetComponent<Animator>();
     }
-    void Close()
+    public void Swing()
     {
-        Destroy(gameObject);
+        isOpen = !isOpen;
+        animator.SetBool("IsOpen", isOpen);
     }
 }
