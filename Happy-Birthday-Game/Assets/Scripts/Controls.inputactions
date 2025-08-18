@@ -35,7 +35,7 @@
                 {
                     "name": "Collect",
                     "type": "Button",
-                    "id": "6a24341f-5430-4bea-a955-b05fefa523c5",
+                    "id": "7d9c8068-dd74-4891-8ae8-edb0892517b9",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -254,7 +254,7 @@
                 },
                 {
                     "name": "",
-                    "id": "dfbef027-3ab7-4cb7-a246-33635dae9a32",
+                    "id": "4ff6da90-3b99-4f96-aedd-f704e20c04a0",
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
@@ -265,7 +265,7 @@
                 },
                 {
                     "name": "",
-                    "id": "b0364832-da24-4a2c-9eeb-92e6d3e73193",
+                    "id": "30b2ba3a-f1c7-4606-bc00-493b94c68246",
                     "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
