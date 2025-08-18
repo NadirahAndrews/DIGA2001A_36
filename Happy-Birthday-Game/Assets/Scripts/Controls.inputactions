@@ -33,9 +33,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "OpenDoor",
+                    "name": "Collect",
                     "type": "Button",
-                    "id": "802320bc-511d-4c9a-ac62-e7223a855a2c",
+                    "id": "6a24341f-5430-4bea-a955-b05fefa523c5",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -254,12 +254,23 @@
                 },
                 {
                     "name": "",
-                    "id": "81a8d8cd-9fdd-4e3a-8961-6b7f2adc66e1",
-                    "path": "<Keyboard>/enter",
+                    "id": "dfbef027-3ab7-4cb7-a246-33635dae9a32",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard",
-                    "action": "OpenDoor",
+                    "action": "Collect",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b0364832-da24-4a2c-9eeb-92e6d3e73193",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "Collect",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
