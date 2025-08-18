@@ -47,6 +47,34 @@ public class FPController : MonoBehaviour
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
     }
+    
+    public void OnCollect(InputAction. CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Ray ray = new Ray(cameraTransform.position, cameraTransform.forward);
+            if (Physics.Raycast(ray, out RaycastHit hit, 3f)) // 3f = range
+            {
+                Collectible collectible = hit.collider.GetComponent<Collectible>();
+                if (collectible != null)
+                {
+             
+                    PlayerInventory inventory = GetComponent<PlayerInventory>();
+                    if (inventory != null)
+                    {
+                        inventory.CakeIngrediantCollected();
+                        Debug.Log("Collected: " + collectible.ingredientName +
+                                  " | Total: " + inventory.NumberOfCakeIngrediants);
+                    }
+
+                    Destroy(hit.collider.gameObject);
+                }
+            }
+        }
+    }
+
+    
+
 
 
     public void HandleMovement()
