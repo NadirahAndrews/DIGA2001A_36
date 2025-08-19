@@ -13,6 +13,7 @@ public class PlayerInventory : MonoBehaviour
     public void CakeIngrediantCollected()
     {
         NumberOfCakeIngrediants++;
+        Debug.Log("Collected! Inventory count: " + NumberOfCakeIngrediants);
         OnCakeIngrediantCollected.Invoke(this);
     }
 
