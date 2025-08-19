@@ -20,12 +20,30 @@ public class FPController : MonoBehaviour
     private Vector3 velocity;
     private float verticalRotation = 0f;
 
+    private PlayerControls controls;
+
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        controls = new PlayerControls();
+        controls.Player.Interact.performed += OnInteract; 
+        controls.Player.Collect.performed += OnCollect;
     }
+
+    private void OnEnable()
+    {
+        controls.Player.Enable();
+    }
+
+    private void OnDisable()
+    {
+        controls.Player.Disable();
+    }
+
+ 
 
     private void Update()
     {
@@ -49,7 +67,7 @@ public class FPController : MonoBehaviour
         }
     }
     
-    public void OnCollect(InputAction. CallbackContext context)
+    public void OnCollect(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
@@ -101,4 +119,29 @@ public class FPController : MonoBehaviour
         cameraTransform.localRotation = Quaternion.Euler(verticalRotation, 0f, 0f);
         transform.Rotate(Vector3.up * mouseX);
     }
+
+   
+    public void OnInteract(InputAction.CallbackContext context)
+    {
+        Debug.Log("E is pressed"); 
+
+        if (context.performed)
+        {
+            Ray ray = new Ray(cameraTransform.position, cameraTransform.forward);   
+
+            if (Physics.Raycast(ray, out RaycastHit hit, 3f))
+            {
+                IInteractable interactable = hit.collider.GetComponent<IInteractable>(); 
+
+                if (interactable != null)
+                {
+                    interactable.Interact();
+                }
+            }
+
+        }
+    }
+
+
+
 }
