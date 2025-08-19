@@ -2,19 +2,20 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 //Reference:Unity Technologies (2025) Input System Manual. Available at: https://docs.unity3d.com/Packages/com.unity.inputsystem@1.7/manual/index.html.(Accessed: 18 August 2025)
+//Reference:OpenAI, 2025. ChatGPT (GPT-5 mini) [AI language model]. Personal assistance with OnCollect Callback. 19 August 2025.
 
 
 
 public class FPController : MonoBehaviour
 {
     [Header("Movement Settings")]
-    public float moveSpeed = 7f;
+    public float moveSpeed = 10f;
     public float gravity = -9.81f;
     public float jumpHeight = 1.5f;
 
     [Header("Look Settings")]
     public Transform cameraTransform;
-    public float lookSensitivity = 2f;
+    public float lookSensitivity = 3f;
     public float verticalLookLimit = 90f;
 
     private CharacterController controller;
