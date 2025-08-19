@@ -1,6 +1,9 @@
 
 using UnityEngine;
 using UnityEngine.InputSystem;
+//Reference:Unity Technologies (2025) Input System Manual. Available at: https://docs.unity3d.com/Packages/com.unity.inputsystem@1.7/manual/index.html.(Accessed: 18 August 2025)
+
+
 
 public class FPController : MonoBehaviour
 {
