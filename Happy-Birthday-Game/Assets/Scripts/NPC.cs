@@ -11,19 +11,17 @@ public class NPC : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-       DialogueUI.Instance.ShowDialogue(dialogueLine);
+      if (!DialogueUI.Instance.IsOpen)
+        {
+            DialogueUI.Instance.ShowDialogue(dialogueLine);
+        }
+      else
+        {
+            DialogueUI.Instance.HideDialogue();
+        }
+
+
     }
 
-    //void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.CompareTag("Player"))
-    //    {
-    //        Debug.Log("Player is here");
-    //        interactionKey.SetActive(true);
-    //    }
-    //}
-
-
-
-
+   
 }

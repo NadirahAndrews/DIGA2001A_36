@@ -23,6 +23,8 @@ public class DialogueUI : MonoBehaviour
     public void HideDialogue()
     {
         dialoguePanel.SetActive(false);
+        dialogueText.text = "";
     }
 
+    public bool IsOpen => dialoguePanel.activeSelf;
 }
